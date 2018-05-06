@@ -1,5 +1,3 @@
-//BRANCH: master
-
 //function to create tile
 function tiles(color) {
   let tile = document.createElement('div');
