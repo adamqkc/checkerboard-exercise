@@ -1,3 +1,5 @@
+let body = document.querySelector('body');
+
 //function to create tile
 function tiles(color) {
   let tile = document.createElement('div');
@@ -24,7 +26,6 @@ function getRandomColor() {
 
 // function to create checkerboard
 function checkerboard(size) {
-  let body = document.querySelector('body');
 
   for (let i = 0; i < size; i++) {
     body.appendChild(tiles(getRandomColor()));
@@ -32,3 +33,11 @@ function checkerboard(size) {
 }
 
 checkerboard(81);
+
+function changeAllColors() {
+  for (let i = 0; i < body.children.length; i++) {
+    body.children[i].style.backgroundColor = getRandomColor();
+  }
+}
+
+setInterval(changeAllColors, 2000);
